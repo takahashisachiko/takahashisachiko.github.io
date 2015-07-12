@@ -1,15 +1,212 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Hello, new world!</h1>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PORTFOLIO</title>
+  <meta name="description" content="サイトの説明">
+  <meta name="keywords" content="キーワード">
+  <!-- BootstrapのCSS読み込み -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- jQuery読み込み -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- BootstrapのJS読み込み -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font-family: Helvetica, Arial, Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+    }
+    .navbar {
+      margin: 0;
+      font-size: 14px;
+      border-radius: 0;
+    }
+    #cover {
+      margin: 50px 0 30px;
+      height: 230px;
+      background: grey center center no-repeat url(flower.JPG);
+      background-size:cover;
+      text-align: center;
+      color: white;
+    }
+    #cover .myname {
+      margin-top: 90px;
+      font-size: 24px;
+      font-family: "Lucida Bright", Palatino , serif;
+      letter-spacing: 5px;
+      text-shadow: 1px 1px #333;
+    }
+    .row {
+      margin-bottom: 50px;
+    }
+    #myphoto {
+      text-align: center;
+    }
+    #myphoto img {
+      max-width: 150px;
+      border:5px solid #B40431;
+      border-radius: 100%;
+    }
+    #profile h1 {
+      margin: 24px 0;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      text-shadow: 1px 1px #ccc;
+      text-align: center;
+    }
+    #profile p {
+      margin-bottom: 30px;
+      font-size: 12px;
+      line-height: 1.6em;
+    }
+    .work {
+      margin-bottom: 50px;
+    }
+    .work .title {
+      margin-bottom: 20px;
+      padding: 14px;
+      background: linear-gradient(white, white, #eee);
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-shadow: 1px 1px 1px grey;
+      border: 1px solid #eee;
+      border-radius: 5px;
+    }
+    .work .photo {
+      margin-bottom: 14px;
+      border: 1px solid #ccc;
+    }
+    .work .photo-inner {
+      margin: 8px;
+      height: 200px;
+      background: grey 0 0 no-repeat url(sample.jpg);
+      background-size: cover;
+      text-indent: 100%;
+      overflow: hidden;
+    }
+    .work .link {
+      margin-bottom: 14px;
+    }
+    footer {
+      padding: 14px;
+      background: #eee;
+      text-align: center;
+    }
+    @media (min-width: 1200px) {
+      .container {width: 1000px;}
+    }
+    @media (max-width: 480px) {
+      .navbar {margin-bottom: 30px;}
+      #cover {display: none;}
+      .row {margin-top: 80px;}
+    }
+  </style>
+  <script>
+  $(function () {
+      var headerheight = 70; //ヘッダーの高さ
+      $('a[href^=#]').click(function(){
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top-headerheight; 
+          $("html, body").animate({scrollTop:position}, 550, "swing");
+          return false;
+      });
+  });
+  </script>
+</head>
+<body>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+  <header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarPortfolio">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">S.T.PORTFOLIO</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarPortfolio">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#work01">課題1</a></li>
+            <li><a href="#work02">課題2</a></li>
+            <li><a href="#work03">課題3</a></li>
+            <li><a href="#work04">課題4</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid" id="cover">
+      <div class="myname">Sachiko Takahashi Portfolio</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <section id="profile">
+          <div id="myphoto">
+            <img src="myphoto.JPG" alt="PHOTO">
+          </div>
+          <h1>高橋 幸子</h1>
+          <p>
+            Webエンジニアへの転職を目指して、TechAcademyのオンラインブートキャンプに参加しています。
+          </p>
+          <div class="list-group">
+            <a href="https://github.com/takahashisachiko" class="list-group-item">GitHub</a>
+            <a href="https://www.facebook.com/t.sachiko.16" class="list-group-item">Facebook</a>
+          </div>
+        </section>
+      </div>
+      <div class="col-md-9">
+        <section class="work" id="work01">
+          <div class="title">課題1</div>
+          <div class="photo"><div class="photo-inner">photo</div></div>
+          <div class="link"><a href="#">http://</a></div>
+          <div class="text">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+            テキストテキストテキストテキストテキストテキスト
+          </div>
+        </section>
+        <section class="work" id="work02">
+          <div class="title">課題2</div>
+          <div class="photo"><div class="photo-inner">photo</div></div>
+          <div class="link"><a href="#">http://</a></div>
+          <div class="text">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+            テキストテキストテキストテキストテキストテキスト
+          </div>
+        </section>
+        <section class="work" id="work03">
+          <div class="title">課題3</div>
+          <div class="photo"><div class="photo-inner">photo</div></div>
+          <div class="link"><a href="#">http://</a></div>
+          <div class="text">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+            テキストテキストテキストテキストテキストテキスト
+          </div>
+        </section>
+        <section class="work" id="work04">
+          <div class="title">課題4</div>
+          <div class="photo"><div class="photo-inner">photo</div></div>
+          <div class="link"><a href="#">http://</a></div>
+          <div class="text">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+            テキストテキストテキストテキストテキストテキスト
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    (C) Sachiko Takahashi
+  </footer>
+  
+</body>
 </html>
